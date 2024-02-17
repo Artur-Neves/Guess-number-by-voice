@@ -11,6 +11,7 @@ recognition.addEventListener("result", onSpeak);
 function onSpeak(event) {
   let guess = event.results[0][0].transcript;
   number.textContent = guess;
+  gameOver(guess);
   validateNumber(guess);
 }
 recognition.addEventListener("end", ()=> recognition.start());

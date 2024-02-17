@@ -1,0 +1,18 @@
+function gameOver(text){
+    debugger
+    if (!(text === "game over")){
+return
+    }
+    updatePallete();
+}
+function updatePallete(){
+document.documentElement.style.setProperty('--background-color', '#0F0E0E');
+document.documentElement.style.setProperty('--primary-color', '#950101');
+document.documentElement.style.setProperty('--secundary-color', '#FF0000');    
+document.body.innerHTML=`
+        <h2>Você Perdeu!</h2>
+        <h3>o número secreto era ${secretNumber}</h3>
+        <button id="restart" class="btn-restart"> Jogar novamente</button>`
+        const buttonRestart = document.getElementById("restart");
+        buttonRestart.onclick = ()=>window.location.reload();
+    }
